@@ -1,0 +1,179 @@
+{
+  "dataset_samples": 1600,
+  "classes": [
+    "Baja",
+    "Media",
+    "Alta",
+    "Critica"
+  ],
+  "selected_model": "GradientBoosting",
+  "selected_model_name": "Gradient Boosting Classifier",
+  "feature_names": [
+    "motion_level",
+    "ai_confidence",
+    "person_count",
+    "vehicle_count",
+    "duration_seconds",
+    "is_night",
+    "zone_risk_level",
+    "anomaly_score"
+  ],
+  "models": {
+    "RandomForest": {
+      "key": "RandomForest",
+      "name": "Random Forest Classifier",
+      "type": "Tree Ensemble",
+      "train_test": {
+        "accuracy": 0.9906,
+        "precision": 0.9939,
+        "recall": 0.956,
+        "f1_score": 0.9735,
+        "confusion_matrix": [
+          [
+            73,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            58,
+            0,
+            2
+          ],
+          [
+            1,
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            180
+          ]
+        ]
+      },
+      "cross_validation": {
+        "folds": 5,
+        "scores": [
+          0.9969,
+          0.9938,
+          0.9969,
+          0.9969,
+          0.9906
+        ],
+        "mean_accuracy": 0.995,
+        "std_accuracy": 0.0025,
+        "mean_f1": 0.9828,
+        "std_f1": 0.0078
+      },
+      "is_selected": false
+    },
+    "GradientBoosting": {
+      "key": "GradientBoosting",
+      "name": "Gradient Boosting Classifier",
+      "type": "Boosting Ensemble",
+      "train_test": {
+        "accuracy": 0.9969,
+        "precision": 0.9986,
+        "recall": 0.9958,
+        "f1_score": 0.9972,
+        "confusion_matrix": [
+          [
+            73,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            59,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            7,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            180
+          ]
+        ]
+      },
+      "cross_validation": {
+        "folds": 5,
+        "scores": [
+          1.0,
+          0.9969,
+          0.9969,
+          1.0,
+          0.9938
+        ],
+        "mean_accuracy": 0.9975,
+        "std_accuracy": 0.0023,
+        "mean_f1": 0.9977,
+        "std_f1": 0.0024
+      },
+      "is_selected": true
+    },
+    "MultiLayerPerceptron": {
+      "key": "MultiLayerPerceptron",
+      "name": "Red Neuronal MLP (Deep Learning)",
+      "type": "Multi-Layer Perceptron",
+      "train_test": {
+        "accuracy": 0.9531,
+        "precision": 0.892,
+        "recall": 0.916,
+        "f1_score": 0.9004,
+        "confusion_matrix": [
+          [
+            67,
+            0,
+            3,
+            3
+          ],
+          [
+            0,
+            54,
+            0,
+            6
+          ],
+          [
+            1,
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            178
+          ]
+        ]
+      },
+      "cross_validation": {
+        "folds": 5,
+        "scores": [
+          0.9719,
+          0.9625,
+          0.9594,
+          0.9625,
+          0.9594
+        ],
+        "mean_accuracy": 0.9631,
+        "std_accuracy": 0.0046,
+        "mean_f1": 0.9153,
+        "std_f1": 0.0111
+      },
+      "is_selected": false
+    }
+  }
+}

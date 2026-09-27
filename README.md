@@ -49,14 +49,14 @@ El proyecto se divide principalmente en:
 
 ## Configuración
 
-### Frontend
+### 1. Frontend
 
 ```bash
 npm install
 npm run dev
 ```
 
-### Backend
+### 2. Backend
 
 ```bash
 cd api
@@ -64,7 +64,7 @@ npm install
 npm run dev
 ```
 
-### Servicio de Machine Learning
+### 3. Servicio de Machine Learning
 
 ```bash
 python ml_service/api.py
@@ -72,13 +72,15 @@ python ml_service/api.py
 
 ## Variables de entorno
 
-El repositorio no incluye credenciales reales. Utiliza los archivos `.env.example` como referencia y crea tus propios archivos `.env` localmente.
+El repositorio no incluye credenciales reales.
+
+Utiliza los archivos `.env.example` como referencia y crea tus propios archivos `.env` localmente.
 
 Nunca publiques claves privadas, credenciales de Firebase ni cadenas de conexión de bases de datos.
 
 ## Estado del proyecto
 
-Proyecto académico y de portafolio en desarrollo activo.
+Proyecto académico / de portafolio en desarrollo activo.
 
 ## Autor
 
