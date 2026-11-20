@@ -72,6 +72,7 @@ export default function Sidebar({
                 <NavItem label="Dashboard" to="/dashboard" />
                 <NavItem label="Monitoreo" to="/monitoreo" />
                 <NavItem label="Alertas" to="/alertas" />
+                {isAdminOrSupervisor && <NavItem label="Reportes" to="/reportes" />}
                 <NavItem label="Grabaciones" to="/grabaciones" />
                 <NavItem label="Análisis ML" to="/ml-analysis" />
                 {isAdminOrSupervisor && <NavItem label="Camaras" to="/camaras" />}

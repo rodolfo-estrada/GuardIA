@@ -78,6 +78,29 @@ service cloud.firestore {
       allow delete: if isAdmin();
     }
 
+    match /incident_reports/{reportId} {
+      allow read: if isAdmin() || isSupervisor();
+      allow create: if signedIn() &&
+        request.resource.data.keys().hasAll([
+          "created_by_user_id", "type", "priority", "description",
+          "status", "ubicacion", "created_at"
+        ]) &&
+        request.resource.data.keys().hasOnly([
+          "created_by_user_id", "type", "priority", "description",
+          "status", "ubicacion", "created_at"
+        ]) &&
+        request.resource.data.created_by_user_id == request.auth.uid &&
+        request.resource.data.type in ["Robo", "Sospechoso", "Incendio", "Accidente", "Ruido", "Otro"] &&
+        request.resource.data.priority in ["baja", "media", "alta"] &&
+        request.resource.data.description is string &&
+        request.resource.data.description.size() >= 5 &&
+        request.resource.data.description.size() <= 2000 &&
+        request.resource.data.status == "sent" &&
+        request.resource.data.ubicacion is string &&
+        request.resource.data.ubicacion.size() <= 512 &&
+        request.resource.data.created_at == request.time;
+    }
+
     match /auditoria_usuarios/{logId} {
       allow read: if isAdmin() || isSupervisor();
       allow write: if false;
