@@ -1,3 +1,4 @@
+import IncidentReportsPage from "./pages/IncidentReportsPage";
 import { useEffect, useState } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import PanelTransition from "./components/overlays/PanelTransition";
@@ -65,6 +66,14 @@ export default function App() {
             }
           />
           <Route path="/alertas" element={<AlertasPage />} />
+          <Route
+            path="/reportes"
+            element={
+              <RoleRoute allowedRoles={["Admin", "Supervisor"]} fallbackTo="/dashboard">
+                <IncidentReportsPage />
+              </RoleRoute>
+            }
+          />
           <Route path="/grabaciones" element={<GrabacionesPage />} />
           <Route path="/ml-analysis" element={<MlAnalysisPage />} />
           <Route path="/usuarios" element={<UsuariosPage />} />
