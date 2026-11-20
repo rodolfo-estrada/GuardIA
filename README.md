@@ -42,6 +42,7 @@ El proyecto se divide principalmente en:
 - `src/`: frontend React + TypeScript
 - `api/`: API backend con Node.js y Express
 - `ml_service/`: entrenamiento e inferencia de modelos de Machine Learning
+- `guardia_ai/`: detección de personas con YOLOv8 y API FastAPI
 - `db/`: scripts de inicialización y datos de desarrollo
 - `docs/`: documentación técnica
 - `architecture/`: diagramas de arquitectura
@@ -68,6 +69,13 @@ npm run dev
 
 ```bash
 python ml_service/api.py
+```
+
+### 4. Servicio de visión GuardIA
+
+```bash
+cd guardia_ai
+python app.py --mode api --host 0.0.0.0 --port 8000
 ```
 
 ## Variables de entorno
